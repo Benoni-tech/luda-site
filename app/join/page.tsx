@@ -17,7 +17,7 @@ const roles = [
 export default function JoinPage() {
   return (
     <>
-      <PageHero image="group" title="Ready to build the Ghana we want?" />
+      <PageHero image="trio" title="Ready to build the Ghana we want?" />
 
       <section className="px-6 py-28">
         <div className="mx-auto flex max-w-site flex-wrap gap-16">

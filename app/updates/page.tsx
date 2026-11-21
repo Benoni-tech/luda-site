@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function UpdatesPage() {
   return (
     <>
-      <PageHero image="students" title="Latest from the ground." />
+      <PageHero image="talk" title="Latest from the ground." />
 
       <section className="px-6 py-28">
         <div className="mx-auto grid max-w-site gap-x-5 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">

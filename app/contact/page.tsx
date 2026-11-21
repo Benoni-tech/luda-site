@@ -18,7 +18,7 @@ const channels = [
 export default function ContactPage() {
   return (
     <>
-      <PageHero image="wave" title="Talk to LUDA." intro="Have a concern from your branch or an idea for the constituency? Send a message and it comes straight to the office." />
+      <PageHero image="field" title="Talk to LUDA." />
 
       <section className="px-6 py-28">
         <div className="mx-auto flex max-w-site flex-wrap gap-16">

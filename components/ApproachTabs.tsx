@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import Reveal from "./Reveal";
 import { approach } from "@/lib/data";
+import { heroImages } from "@/lib/heroImages";
 
 export default function ApproachTabs() {
   const [tab, setTab] = useState(0);
@@ -11,10 +13,20 @@ export default function ApproachTabs() {
   return (
     <div className="flex flex-wrap items-stretch gap-14">
       <Reveal from="left" className="min-h-[460px] min-w-0 max-w-[560px] flex-[1_1_420px]">
-        <div
-          className={`flex h-full min-h-[460px] items-center justify-center text-white transition-colors duration-500 ${current.bg}`}
-        >
-          <div key={tab} className="flex animate-fadeUp flex-col items-center gap-6 p-10 text-center">
+        <div className="relative flex h-full min-h-[460px] items-center justify-center overflow-hidden bg-ndc-ink text-white">
+          {approach.map((a, i) => (
+            <Image
+              key={a.name}
+              src={heroImages[a.image].src}
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 560px"
+              className={`object-cover transition-opacity duration-700 ${tab === i ? "opacity-100" : "opacity-0"}`}
+              style={{ objectPosition: heroImages[a.image].position }}
+            />
+          ))}
+          <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
+          <div key={tab} className="relative flex animate-fadeUp flex-col items-center gap-6 p-10 text-center">
             <span className="text-[140px] font-light leading-none tracking-[-0.05em]">{current.big}</span>
             <span className="max-w-[300px] text-lg font-medium leading-snug">{current.caption}</span>
           </div>

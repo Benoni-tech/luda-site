@@ -25,7 +25,7 @@ export default function UpdatePage({ params }: Props) {
 
   return (
     <>
-      <PhotoHero image="students" title={update.title} link={{ href: "/updates", label: "All updates" }} />
+      <PhotoHero image={update.image} title={update.title} link={{ href: "/updates", label: "All updates" }} />
 
       <article className="px-6 py-24">
         <div className="mx-auto flex max-w-2xl flex-col gap-6">

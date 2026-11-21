@@ -1,12 +1,12 @@
-import PhotoHero, { type HeroImage } from "./PhotoHero";
+import PhotoHero from "./PhotoHero";
+import type { HeroImage } from "@/lib/heroImages";
 
 type Props = {
   title: string;
-  intro?: string;
   link?: { href: string; label: string };
   image?: HeroImage;
 };
 
-export default function PageHero({ title, intro, link, image }: Props) {
-  return <PhotoHero title={title} intro={intro} link={link} image={image} />;
+export default function PageHero({ title, link, image }: Props) {
+  return <PhotoHero title={title} link={link} image={image} />;
 }

@@ -1,3 +1,5 @@
+import type { HeroImage } from "./heroImages";
+
 export const site = {
   name: "LUDA",
   fullName: "Kingsley Ofori Aidoo",
@@ -22,9 +24,9 @@ export const navLinks = [
 ];
 
 export const heroSlides = [
-  "Thank you, Upper Denkyira West.",
-  "Stronger branches start now.",
-  "Every member. One team.",
+  "A man born for the people.",
+  "Diverse experience. Proactive leadership.",
+  "Effective service, wherever the party needs him.",
 ];
 
 export type Priority = {
@@ -85,7 +87,7 @@ export type Approach = {
   name: string;
   big: string;
   caption: string;
-  bg: string;
+  image: HeroImage;
   head: string;
   body: string;
 };
@@ -95,7 +97,7 @@ export const approach: Approach[] = [
     name: "Listen",
     big: "01",
     caption: "Hearing every branch first",
-    bg: "bg-ndc-red",
+    image: "talk",
     head: "Listening first",
     body: "Every plan starts with what members say. LUDA meets branch executives in person and keeps a line open on WhatsApp for concerns.",
   },
@@ -103,7 +105,7 @@ export const approach: Approach[] = [
     name: "Organise",
     big: "02",
     caption: "Records and structure that work",
-    bg: "bg-ndc-green",
+    image: "community",
     head: "Organising the office",
     body: "Clean registers, clear minutes and a calendar every branch can see, so the secretariat runs on facts, not guesswork.",
   },
@@ -111,7 +113,7 @@ export const approach: Approach[] = [
     name: "Communicate",
     big: "03",
     caption: "Information that moves fast",
-    bg: "bg-ndc-ink",
+    image: "laugh",
     head: "Keeping everyone informed",
     body: "Notices, results and meeting dates go out quickly, so every member hears it from the party first.",
   },
@@ -120,11 +122,9 @@ export const approach: Approach[] = [
 export type Update = {
   slug: string;
   tag: string;
-  mark: string;
   title: string;
   summary: string;
-  bg: string;
-  fg: string;
+  image: HeroImage;
   body: string[];
 };
 
@@ -132,11 +132,9 @@ export const updates: Update[] = [
   {
     slug: "luda-elected-deputy-secretary",
     tag: "October 2026",
-    mark: "Won",
     title: "LUDA elected Deputy Secretary",
     summary: "Delegates back a young voice for the constituency secretariat.",
-    bg: "bg-ndc-red",
-    fg: "text-white",
+    image: "community",
     body: [
       "Kingsley Ofori Aidoo, popularly known as LUDA, has been elected Deputy Secretary of the NDC in Upper Denkyira West Constituency.",
       "In his first words after the result, LUDA thanked delegates, branch executives and party members for their trust, and promised to put the work of the secretariat first.",
@@ -146,11 +144,9 @@ export const updates: Update[] = [
   {
     slug: "thank-you-tour",
     tag: "Branch visits",
-    mark: "Tour",
     title: "Thank-you tour of the branches",
     summary: "Meeting executives and members to listen and plan.",
-    bg: "bg-ndc-paper",
-    fg: "text-ndc-ink",
+    image: "laugh",
     body: [
       "LUDA is visiting branches across the constituency to thank members for their support.",
       "Each stop is also a listening session, where branch executives share concerns the secretariat should act on.",
@@ -159,11 +155,9 @@ export const updates: Update[] = [
   {
     slug: "first-executive-meeting",
     tag: "Office",
-    mark: "Plan",
     title: "First executive meeting of the term",
     summary: "Setting the secretariat plan and the calendar ahead.",
-    bg: "bg-ndc-green",
-    fg: "text-white",
+    image: "talk",
     body: [
       "The new constituency executives have met to agree on priorities and a calendar for the year.",
       "Records, branch support and communication were top of the agenda.",
@@ -172,11 +166,9 @@ export const updates: Update[] = [
   {
     slug: "youth-volunteer-drive",
     tag: "Youth",
-    mark: "Join",
     title: "Youth volunteer drive opens",
     summary: "Young members can sign up to support branch work.",
-    bg: "bg-ndc-ink",
-    fg: "text-white",
+    image: "trio",
     body: [
       "Young party members in Upper Denkyira West can now sign up to volunteer.",
       "Volunteers will support branch mobilisation, events and the party's social media presence.",
@@ -185,11 +177,9 @@ export const updates: Update[] = [
   {
     slug: "membership-register-update",
     tag: "Records",
-    mark: "List",
     title: "Membership register update",
     summary: "Branches asked to confirm member details with the office.",
-    bg: "bg-ndc-paper",
-    fg: "text-ndc-red",
+    image: "smock",
     body: [
       "The constituency office is updating the membership register.",
       "Branch secretaries are asked to confirm member details so the party has accurate records.",

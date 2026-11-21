@@ -14,9 +14,8 @@ export default function PrioritiesPage() {
   return (
     <>
       <PageHero
-        image="group"
+        image="laugh"
         title="Four things LUDA is working on."
-        intro="Each one is built around the work of the constituency secretariat and what branches have asked for."
         link={{ href: "/join", label: "Join the team" }}
       />
 

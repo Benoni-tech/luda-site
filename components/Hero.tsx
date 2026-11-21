@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from "react";
 import PhotoHero, { HeroDot } from "./PhotoHero";
+import type { HeroImage } from "@/lib/heroImages";
 import { heroSlides } from "@/lib/data";
+
+// Photos alternate with the headlines in heroSlides
+const slideImages: HeroImage[] = ["garden", "pair"];
 
 export default function Hero() {
   const [slide, setSlide] = useState(0);
@@ -18,7 +22,9 @@ export default function Hero() {
     <PhotoHero
       title={heroSlides[slide]}
       titleKey={slide}
-      link={{ href: "/join", label: "Join the team" }}
+      image={slideImages}
+      imageIndex={slide}
+      link={{ href: "/about#vision", label: "See the vision" }}
       dots={
         <div className="-mr-2 flex items-center" role="group" aria-label="Hero messages">
           {heroSlides.map((text, i) => (

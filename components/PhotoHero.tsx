@@ -6,27 +6,20 @@ import { usePathname } from "next/navigation";
 import { useRef } from "react";
 import { ArrowRight } from "./Icons";
 import { navLinks } from "@/lib/data";
+import { heroImages, type HeroImage } from "@/lib/heroImages";
 
 type Props = {
   title: string;
   titleKey?: React.Key;
-  intro?: string;
   link?: { href: string; label: string };
   dots?: React.ReactNode;
-  image?: HeroImage;
+  image?: HeroImage | HeroImage[];
+  imageIndex?: number;
 };
-
-export const heroImages = {
-  wave: { src: "/images/hero-wave.jpg", position: "47% 30%" },
-  panel: { src: "/images/hero-panel.jpg", position: "32% center" },
-  students: { src: "/images/hero-students.jpg", position: "52% 35%" },
-  group: { src: "/images/hero-group.jpg", position: "51% center" },
-};
-
-export type HeroImage = keyof typeof heroImages;
 
 // Full-bleed photo hero: bold headline low on the left, Scroll + dots footer.
-export default function PhotoHero({ title, titleKey, intro, link, dots, image = "wave" }: Props) {
+export default function PhotoHero({ title, titleKey, link, dots, image = "community", imageIndex = 0 }: Props) {
+  const images = Array.isArray(image) ? image : [image];
   const ref = useRef<HTMLElement>(null);
   const pathname = usePathname();
 
@@ -38,15 +31,20 @@ export default function PhotoHero({ title, titleKey, intro, link, dots, image = 
 
   return (
     <section ref={ref} className="relative h-[calc(100svh-68px)] min-h-[560px] overflow-hidden bg-ndc-ink text-white">
-      <Image
-        src={heroImages[image].src}
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="animate-[heroZoom_8s_ease-out_both] object-cover"
-        style={{ objectPosition: heroImages[image].position }}
-      />
+      {images.map((key, i) => (
+        <Image
+          key={key}
+          src={heroImages[key].src}
+          alt=""
+          fill
+          priority={i === 0}
+          sizes="100vw"
+          className={`animate-[heroZoom_8s_ease-out_both] object-cover transition-opacity duration-1000 ${
+            i === imageIndex % images.length ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ objectPosition: heroImages[key].position }}
+        />
+      ))}
       <div
         className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/90 md:from-black/30 md:via-transparent md:to-black/85"
         aria-hidden="true"
@@ -66,14 +64,6 @@ export default function PhotoHero({ title, titleKey, intro, link, dots, image = 
           >
             {title}
           </h1>
-          {intro && (
-            <p
-              className="max-w-xl animate-fadeUp text-[15px] leading-relaxed text-white/80 md:text-lg"
-              style={{ animationDelay: "200ms" }}
-            >
-              {intro}
-            </p>
-          )}
           {link && (
             <Link
               href={link.href}
