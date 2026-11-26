@@ -25,12 +25,6 @@ export const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-export const heroSlides = [
-  "A man born for the people.",
-  "Diverse experience. Proactive leadership.",
-  "Effective service, wherever the party needs him.",
-];
-
 export type Priority = {
   num: string;
   title: string;

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter_Tight } from "next/font/google";
+import { Cinzel, Inter_Tight } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -8,6 +8,14 @@ const interTight = Inter_Tight({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-inter-tight",
+  display: "swap",
+});
+
+// Serif caps for the home hero name
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  variable: "--font-cinzel",
   display: "swap",
 });
 
@@ -27,7 +35,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={interTight.variable}>
+    <html lang="en" className={`${interTight.variable} ${cinzel.variable}`}>
       <body className="font-sans">
         <div id="top" />
         <Header />

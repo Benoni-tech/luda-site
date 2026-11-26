@@ -15,6 +15,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter-tight)", "system-ui", "sans-serif"],
+        serif: ["var(--font-cinzel)", "Georgia", "serif"],
       },
       maxWidth: {
         site: "1360px",
