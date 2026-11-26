@@ -18,6 +18,8 @@ export const site = {
 export const navLinks = [
   { href: "/about", label: "About" },
   { href: "/priorities", label: "Priorities" },
+  { href: "/projects", label: "Projects" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/updates", label: "Updates" },
   { href: "/join", label: "Join" },
   { href: "/contact", label: "Contact" },
@@ -129,6 +131,18 @@ export type Update = {
 };
 
 export const updates: Update[] = [
+  {
+    slug: "birthday-donation-ayanfuri-health-centre",
+    tag: "Community",
+    title: "LUDA marks his birthday with a donation to Ayanfuri health centre",
+    summary: "Rice, oil, fish, diapers and toiletries for patients at The Church of Pentecost Health Center.",
+    image: "donation",
+    body: [
+      "Kingsley Ofori Aidoo (LUDA) celebrated his birthday by donating food and essential supplies to The Church of Pentecost Health Center in Ayanfuri.",
+      "The items included rice, cooking oil, sardines, mackerel, baby diapers, toiletries and many more, presented to staff at the health centre's outpatient department.",
+      "Constituency Chairman Joseph Mawuli Golomeke stood beside LUDA at the presentation and supported the donation.",
+    ],
+  },
   {
     slug: "luda-elected-deputy-secretary",
     tag: "October 2026",

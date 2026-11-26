@@ -27,12 +27,12 @@ export default function Header() {
         scrolled ? "shadow-[0_1px_0_#ECECEC]" : ""
       }`}
     >
-      <div className="mx-auto grid max-w-site grid-cols-[1fr_auto] items-center gap-6 px-6 py-3.5 md:grid-cols-[1fr_auto_1fr]">
+      <div className="mx-auto grid max-w-site grid-cols-[1fr_auto] items-center gap-6 px-6 py-3.5 lg:grid-cols-[1fr_auto_1fr]">
         <div className="justify-self-start">
           <Logo />
         </div>
 
-        <nav aria-label="Main" className="hidden justify-center gap-8 text-[15px] font-medium md:flex">
+        <nav aria-label="Main" className="hidden justify-center gap-7 text-[15px] font-medium lg:flex">
           {navLinks.map((link) => {
             const active = pathname === link.href || pathname.startsWith(link.href + "/");
             return (
@@ -61,7 +61,7 @@ export default function Header() {
           </Link>
           <button
             type="button"
-            className="flex h-11 w-11 items-center justify-center md:hidden"
+            className="flex h-11 w-11 items-center justify-center lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
@@ -72,8 +72,8 @@ export default function Header() {
       </div>
 
       <div
-        className={`overflow-hidden border-t border-neutral-200 transition-[max-height] duration-500 ease-out md:hidden ${
-          open ? "max-h-96" : "max-h-0 border-t-0"
+        className={`overflow-hidden border-t border-neutral-200 transition-[max-height] duration-500 ease-out lg:hidden ${
+          open ? "max-h-[36rem]" : "max-h-0 border-t-0"
         }`}
       >
         <nav aria-label="Mobile" className="flex flex-col items-center gap-1 py-4">

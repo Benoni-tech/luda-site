@@ -8,6 +8,11 @@ export const heroImages = {
   pair: { src: "/images/hero-pair.jpg", position: "48% 20%" },
   trio: { src: "/images/hero-trio.jpg", position: "50% 20%" },
   garden: { src: "/images/hero-garden.jpg", position: "55% 20%" },
+  donation: { src: "/images/donation-2.jpg", position: "50% 35%" },
+  donationTall: { src: "/images/donation-1.jpg", position: "50% 30%" },
+  portrait: { src: "/images/portrait-3.jpg", position: "50% 22%" },
+  meeting: { src: "/images/community-meeting.jpg", position: "50% 55%" },
+  seated: { src: "/images/community-seated.jpg", position: "50% 55%" },
 };
 
 export type HeroImage = keyof typeof heroImages;
