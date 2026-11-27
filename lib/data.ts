@@ -8,11 +8,10 @@ export const site = {
   constituency: "Upper Denkyira West",
   region: "Central Region",
   slogan: "Building the Ghana We Want",
-  // Replace with LUDA's real number and handles before launch
-  whatsapp: "https://wa.me/233000000000",
-  facebook: "https://facebook.com",
-  tiktok: "https://tiktok.com",
-  instagram: "https://instagram.com",
+  whatsapp: "https://wa.me/233556506393",
+  facebook: "https://www.facebook.com/share/1Km9XMF43t/",
+  tiktok: "https://www.tiktok.com/@ludakingsley",
+  instagram: "https://www.instagram.com/ludakingsley/",
 };
 
 export const navLinks = [
